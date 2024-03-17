@@ -3,16 +3,24 @@ package org.example
 class RomanNumberConverter {
     companion object {
         fun convert(arabic: Int): String {
-            if (arabic == 4) {
-                return "IV"
-            }
+
             var ret = ""
             var a = arabic
 
-            if (a >= 5) {
-                ret = "V"
+            if (a % 5 == 4) {
+                ret += "I"
+            }
+
+            if (a >= 9) {
+                ret += "X"
+                return ret
+            }
+
+            if (a >= 5 || a == 4) {
+                ret += "V"
                 a -= 5
             }
+
             for (i in 1..a) {
                 ret += "I"
             }
