@@ -7,12 +7,13 @@ class RomanNumberConverter {
             var ret = ""
             var a = arabic
 
-            if (a == 50) {
-                return "L"
+            if (a % 50 == 40) {
+                ret += "X"
             }
 
-            if (a == 40) {
-                return "XL"
+            if (a >= 40) {
+                ret += "L"
+                a -= 50
             }
 
             while (a >= 10) {
@@ -29,7 +30,7 @@ class RomanNumberConverter {
                 return ret
             }
 
-            if (a >= 5 || a == 4) {
+            if (a >= 4) {
                 ret += "V"
                 a -= 5
             }
