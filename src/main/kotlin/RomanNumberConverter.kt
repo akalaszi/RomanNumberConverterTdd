@@ -7,16 +7,16 @@ class RomanNumberConverter {
             var ret = ""
             var a = arabic
 
-            if (a > 10) {
+            if (a >= 10) {
                 ret = "X"
-                a-=10
+                a -= 10
             }
 
             if (a % 5 == 4) {
                 ret += "I"
             }
 
-            if (a >= 9) {
+            if (a == 9) {
                 ret += "X"
                 return ret
             }
