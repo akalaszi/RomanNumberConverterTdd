@@ -7,6 +7,11 @@ class RomanNumberConverter {
             var ret = ""
             var a = arabic
 
+            if (a > 10) {
+                ret = "X"
+                a-=10
+            }
+
             if (a % 5 == 4) {
                 ret += "I"
             }
