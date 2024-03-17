@@ -7,8 +7,8 @@ class RomanNumberConverter {
             var ret = ""
             var a = arabic
 
-            if (a >= 10) {
-                ret = "X"
+            while (a >= 10) {
+                ret += "X"
                 a -= 10
             }
 
