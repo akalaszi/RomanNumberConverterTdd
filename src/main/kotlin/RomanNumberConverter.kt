@@ -7,6 +7,10 @@ class RomanNumberConverter {
             var ret = ""
             var a = arabic
 
+            if (a == 50) {
+                return "L"
+            }
+
             if (a == 40) {
                 return "XL"
             }
