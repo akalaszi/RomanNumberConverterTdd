@@ -7,7 +7,7 @@ class RomaNumeralsTest {
 
     @Test
     fun ` should match`() {
-        assertEquals("I", RomanNumerals.convert())
-
+        assertEquals("I", RomanNumerals.convert(1))
+        assertEquals("II", RomanNumerals.convert(2))
     }
 }
