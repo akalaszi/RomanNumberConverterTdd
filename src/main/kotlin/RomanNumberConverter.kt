@@ -3,23 +3,6 @@ package org.example
 class RomanNumberConverter {
     companion object {
 
-//        fun pow(a: Int, b: Int): Int {
-//            if (a == 0) return 0
-//            var pov = 1
-//            for (i in 0..<b) {
-//                pov *= a
-//            }
-//            return pov
-//        }
-//
-//        fun toNumber(digits: List<Int>): Int {
-//            var calculated = 0;
-//            for (i in digits.indices) {
-//                calculated += digits[i] * pow(10, i)
-//            }
-//            return calculated
-//        }
-
         fun splitToDigits(number: Int): List<Int> {
             var tmp = number
             val digits: MutableList<Int> = ArrayList()
