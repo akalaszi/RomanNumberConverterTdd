@@ -44,7 +44,7 @@ class RomanNumberConverter {
             }
 
             if (a == 9) {
-                ret += "L"
+                ret += "C"
                 return ret
             }
 
