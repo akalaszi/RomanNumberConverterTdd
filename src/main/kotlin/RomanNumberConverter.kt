@@ -2,25 +2,37 @@ package org.example
 
 class RomanNumberConverter {
     companion object {
-        fun convert(arabic: Int): String {
 
+//        fun pow(a: Int, b: Int): Int {
+//            if (a == 0) return 0
+//            var pov = 1
+//            for (i in 0..<b) {
+//                pov *= a
+//            }
+//            return pov
+//        }
+//
+//        fun toNumber(digits: List<Int>): Int {
+//            var calculated = 0;
+//            for (i in digits.indices) {
+//                calculated += digits[i] * pow(10, i)
+//            }
+//            return calculated
+//        }
+
+        fun splitToDigits(number: Int): List<Int> {
+            var tmp = number
+            val digits: MutableList<Int> = ArrayList()
+            while (tmp >= 1) {
+                digits.add(tmp % 10)
+                tmp /= 10
+            }
+            return digits
+        }
+
+        private fun processOneToNine(number: Int): String {
+            var a = number
             var ret = ""
-            var a = arabic
-
-            if (a % 50 == 40) {
-                ret += "X"
-            }
-
-            if (a >= 40) {
-                ret += "L"
-                a -= 50
-            }
-
-            while (a >= 10) {
-                ret += "X"
-                a -= 10
-            }
-
             if (a % 5 == 4) {
                 ret += "I"
             }
@@ -38,7 +50,39 @@ class RomanNumberConverter {
             for (i in 1..a) {
                 ret += "I"
             }
+            return ret
+        }
 
+        private fun processTenth(number: Int): String {
+            var a = number
+            var ret = ""
+            if (a % 5 == 4) {
+                ret += "X"
+            }
+
+            if (a == 9) {
+                ret += "L"
+                return ret
+            }
+
+            if (a >= 4) {
+                ret += "L"
+                a -= 5
+            }
+
+            for (i in 1..a) {
+                ret += "X"
+            }
+            return ret
+        }
+
+        fun convert(arabic: Int): String {
+            val digits = splitToDigits(arabic)
+            var ret = ""
+            if (digits.size > 1) {
+                ret += processTenth(digits[1])
+            }
+            ret += processOneToNine(digits[0])
             return ret
         }
     }
