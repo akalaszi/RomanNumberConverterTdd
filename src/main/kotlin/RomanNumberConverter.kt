@@ -13,60 +13,41 @@ class RomanNumberConverter {
             return digits
         }
 
-        private fun processOneToNine(number: Int): String {
+        private fun process(number: Int, numerals:Numerals ): String {
             var a = number
             var ret = ""
             if (a % 5 == 4) {
-                ret += "I"
+                ret += numerals.one
             }
 
             if (a == 9) {
-                ret += "X"
+                ret += numerals.ten
                 return ret
             }
 
             if (a >= 4) {
-                ret += "V"
+                ret += numerals.five
                 a -= 5
             }
 
             for (i in 1..a) {
-                ret += "I"
+                ret += numerals.one
             }
             return ret
         }
 
-        private fun processTenth(number: Int): String {
-            var a = number
-            var ret = ""
-            if (a % 5 == 4) {
-                ret += "X"
-            }
-
-            if (a == 9) {
-                ret += "C"
-                return ret
-            }
-
-            if (a >= 4) {
-                ret += "L"
-                a -= 5
-            }
-
-            for (i in 1..a) {
-                ret += "X"
-            }
-            return ret
-        }
 
         fun convert(arabic: Int): String {
+            val ones = Numerals("I", "V", "X")
+            val tens = Numerals("X", "L", "C")
             val digits = splitToDigits(arabic)
             var ret = ""
             if (digits.size > 1) {
-                ret += processTenth(digits[1])
+                ret += process(digits[1], tens)
             }
-            ret += processOneToNine(digits[0])
+            ret += process(digits[0], ones)
             return ret
         }
+        data class Numerals(val one:String, val five:String, val ten:String)
     }
 }
