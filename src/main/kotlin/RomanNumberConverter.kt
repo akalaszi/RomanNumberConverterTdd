@@ -41,15 +41,12 @@ class RomanNumberConverter {
             val ones = Numerals("I", "V", "X")
             val tens = Numerals("X", "L", "C")
             val hundreds = Numerals("C", "D", "M")
+            val posToNumerals = mapOf(0 to ones, 1 to tens, 2 to hundreds)
             val digits = splitToDigits(arabic)
             var ret = ""
-            if (digits.size > 2) {
-                ret += process(digits[2], hundreds)
+            for (i in digits.size-1  downTo 0) {
+                ret += process(digits[i], posToNumerals[i]!!)
             }
-            if (digits.size > 1) {
-                ret += process(digits[1], tens)
-            }
-            ret += process(digits[0], ones)
             return ret
         }
 
