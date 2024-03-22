@@ -16,7 +16,7 @@ If you do it right you will see
 
 # Final step
 When you are done, delete it and start it over. Yes, yes do it.
-The way is the aim, not the end result. The aim is of the task is the points under the "Purpose" goes into your blood.
+The way is the aim, not the end result. The aim is that the points under the "Purpose" go into your blood.
 
 # Extra mile
 Search for "transformation priority premise"
