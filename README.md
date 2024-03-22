@@ -4,7 +4,7 @@
 Write a program, that converts an Arabic number to a Roman number. You can expect inputs between 1 and 9999 inclusive.
 
 ## TDD rules
-- Red: Always start with a test, that will fail
+- Red: Always start with a test, that fails
 - Green: Always write as little production code, that satisfies the test
 - Refactor: Always try to simplify, generatlize, make the code nicer to read
 
