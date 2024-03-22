@@ -1,7 +1,7 @@
 # Arabic number to Roman Number converter TDD kata
 
 ## Task
-Write a program, that converts an Arabic number to Roman numbers. You can expect inputs between 1 and 9999 inclusive.
+Write a program, that converts an Arabic number to a Roman number. You can expect inputs between 1 and 9999 inclusive.
 
 ## TDD rules
 - Red: Always start with a test, that will fail
